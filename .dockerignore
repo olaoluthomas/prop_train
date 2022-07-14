@@ -1,0 +1,14 @@
+Dockerfile
+README.md
+setup.py
+*.pyc
+*.pyo
+*.pyd
+*.toml
+__pycache__
+.pytest_cache
+*.code-workspace
+.gitignore
+.dockerignore
+.git
+LICENSE
