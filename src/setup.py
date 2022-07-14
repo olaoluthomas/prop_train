@@ -21,10 +21,10 @@ setup(
     description="A Python trainer package for Propensity modeling",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/olaoluthomas/prop_train",
     project_urls={
         "Project": "",
-        "Bug Tracker": "",
+        "Bug Tracker": "https://github.com/olaoluthomas/prop_train/issues",
     },
     license="Apache2",
     classifiers=[

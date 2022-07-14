@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: prop-trainer
+Version: 0.1.dev2
+Summary: A Python trainer package for Propensity modeling
+Home-page: https://github.com/olaoluthomas/prop_train
+Author: Simeon Thomas
+Author-email: thomasolaoluwa@gmail.com
+License: Apache2
+Project-URL: Project, 
+Project-URL: Bug Tracker, https://github.com/olaoluthomas/prop_train/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+---
+# ML Training Pipeline for Main Event Propensity Models
+
+
+Deploying DM propensity model training and serving in Vertex AI.
+
+---
+
+This is a barebones solution to run model training via Python command.
+
+The Python module syntax is:\
+\
+`python -m proptrainer.train --segment=<SEGMENT> --table_name=<TABLENAME> --timestamp=<TIMESTAMP>`\
+\
+where
+- "SEGMENT" is the propensity segment to be trained
+- "TABLENAME" holds the training data.
+- "TIMESTAMP" is an identifier of training job execution time (used as part of GCS URI/folder path to save and retrieve model artifacts
+
+Suggested timestamp:\
+`import datetime`\
+`timestamp = datetime.datetime.now().strftime('export_%Y%m%d_%H%M%S')`
+
+Hyperparameter tuning enabled by passing the "--hypertune" parameter as True
+
+`python -m proptrainer.train --segment=<SEGMENT> --table_name=<TABLENAME> --timestamp=<TIMESTAMP> --hypertune`
+
+
