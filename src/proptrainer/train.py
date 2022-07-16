@@ -41,7 +41,7 @@ def create_parser():
                         required=False)
     parser.add_argument('--min_child_weight',
                         help="hyperparameter (min_child_weight)",
-                        default=10,
+                        default=5,
                         type=int,
                         required=False)
     parser.add_argument('--max_delta_step',
