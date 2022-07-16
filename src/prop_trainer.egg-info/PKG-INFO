@@ -39,7 +39,7 @@ Suggested timestamp:\
 `import datetime`\
 `timestamp = datetime.datetime.now().strftime('export_%Y%m%d_%H%M%S')`
 
-Hyperparameter tuning enabled by passing the "--hypertune" parameter as True
+Hyperparameter tuning enabled by passing the "--hypertune" argument
 
 `python -m proptrainer.train --segment=<SEGMENT> --table_name=<TABLENAME> --timestamp=<TIMESTAMP> --hypertune`
 
