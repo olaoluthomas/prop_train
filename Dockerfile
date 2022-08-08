@@ -17,10 +17,8 @@ FROM python:3.7.13-slim
 LABEL version="v0.2"
 LABEL image-desc="A docker image for building Propensity models via Vertex Pipelines"
 LABEL maintainer="Simeon Thomas"
-LABEL maintainer-email="simeon.thomas@bedbath.com"
-LABEL org.opencontainers.image.source="https://github.bedbath.com/Advanced-Analytics/vertex_prop_training"
-LABEL com.bedbath.github.advanced-analytics.ci-build="https://github.bedbath.com/Advanced-Analytics/vertex_prop_training"
-LABEL com.bedbath.github.advanced-analytics.releasenotes="Default entrypoint runs the proptrainer module via Python"
+LABEL maintainer-email="thomasolaoluwa@gmail.com"
+LABEL org.opencontainers.image.source="https://github.com/olaoluthomas/vertex_prop_train"
 
 # to show print statements and logs to display in Knative logs
 ENV PYTHONUNBUFFERED True
