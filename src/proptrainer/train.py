@@ -1,7 +1,7 @@
 """
 A task utility and argument parser to initiate Propensity model training and hyperparameter tuning.
 
-https://github.bedbath.com/Advanced-Analytics/propensity_training_pipeline
+https://github.com/olaoluthomas/vertex_prop_train
 
 Author: Simeon Thomas
 """
