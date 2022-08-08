@@ -1,7 +1,7 @@
 """
 A feature lookup for Propensity model training and prediction.
 
-https://github.bedbath.com/Advanced-Analytics/propensity_training_pipeline
+https://github.com/olaoluthomas/vertex_prop_train
 
 Author: Simeon Thomas
 """
