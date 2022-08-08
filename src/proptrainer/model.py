@@ -1,7 +1,7 @@
 """
 A utility to facilitate DM Propensity model training in Vertex AI.
 
-https://github.bedbath.com/Advanced-Analytics/propensity_training_pipeline
+https://github.com/olaoluthomas/vertex_prop_train
 
 Author: Simeon Thomas
 """
