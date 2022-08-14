@@ -1,3 +1,13 @@
+# Miscellaneous
+model.joblib
+*.pkl
+setup.cfg
+pyproject.toml
+requirements.txt
+
+# Docker
+.dockerignore
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -22,9 +32,9 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
-*.egg-info/
 .installed.cfg
 *.egg
+*.egg-info/
 MANIFEST
 
 # PyInstaller
@@ -127,3 +137,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# VS Code files for those working on multiple tools
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
