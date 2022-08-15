@@ -1,6 +1,6 @@
 FROM python:3.7.13-slim
 
-LABEL version="0.2.1"
+LABEL version="0.2.2"
 LABEL image-desc="A docker image for building Propensity models via Vertex AI"
 LABEL maintainer="Simeon Thomas"
 LABEL org.opencontainers.image.authors="thomasolaoluwa@gmail.com"
@@ -12,13 +12,13 @@ ENV PYTHONUNBUFFERED True
 
 # copy package installer
 WORKDIR /
-COPY ./src/dist/vertex_proptrainer-0.2.1-py3-none-any.whl ./
+COPY ./src/dist/vertex_proptrainer-0.2.2-py3-none-any.whl ./
 
 # make RUN commands use `bash --login`
 SHELL ["/bin/bash", "--login", "-c"]
 
 # install package
-RUN pip install ./vertex_proptrainer-0.2.1-py3-none-any.whl
+RUN pip install ./vertex_proptrainer-0.2.2-py3-none-any.whl
 
 # establish entrypoint
 ENTRYPOINT ["python", "-m", "vertex_proptrainer.train"]
