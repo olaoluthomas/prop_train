@@ -3,10 +3,10 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
     
-VERSION = '0.2.2'
+VERSION = '0.2.1'
 
 REQUIRED_PACKAGES = [
-    'pandas==1.1.5', 'xgboost==1.5.2', 'numpy>=1.21', 'scikit-learn==0.24.2',
+    'pandas==1.1.5', 'xgboost==1.5.2', 'numpy==1.19.5', 'scikit-learn==0.24.2',
     'pandas-gbq==0.14.1', 'google-cloud-bigquery==2.34.2',
     'google-cloud-bigquery-storage==2.13.0', 'google-cloud-storage==1.44.0',
     'importlib-resources==5.4.0', 'cloudml-hypertune==0.1.0.dev6',
