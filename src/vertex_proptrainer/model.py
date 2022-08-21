@@ -506,7 +506,6 @@ def save_model(estimator, scaler, model_dir):
     with open(scal, 'wb') as s:
         pickle.dump(scaler, s)
 
-    model_dir = f"{model_dir}/model"
     model_storage_path = os.path.join(model_dir, model)
     scaler_storage_path = os.path.join(model_dir, scal)
     storage_client = storage.Client()
