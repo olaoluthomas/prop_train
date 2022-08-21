@@ -9,7 +9,7 @@ Custom Container Propensity model training in Vertex AI.
 This is a barebones solution to run model training in Vertex AI with training data
 either with a BQ table or a Vertex Managed Dataset.
 
-The Python module run syntax is:\
+The Python module syntax is:\
 \
 `python -m vertex_proptrainer.train --segment <SEGMENT> --dataset <DATASET>`\
 \
@@ -21,12 +21,14 @@ Alternatively, if the dataset is already split into train and eval:\
 \
 `python -m vertex_proptrainer.train --segment <SEGMENT> --train_data <TRAIN> --eval_data <EVAL>`
 
-If training with a Vertex Managed Dataset within a Vertex Kubeflow Pipeline, dataset is 
-passed as an argument directly to the CustomContainerTrainingJobRunOp and neither of
-dataset, train_data or eval_data args is passed as command line arguments allowing the 
-training script to pick the dataset(s) from default environment variables -
-`os.environ["AIP_TRAINING_DATA_URI"]`, `os.environ["AIP_EVALUATION_DATA_URI"]`, and
-`os.environ["AIP_TESTING_DATA_URI"]` - set by Vertex AI.
+
+If training with Vertex Managed Dataset in Vertex Kubeflow Pipelines, dataset is passed as an
+argument directly to CustomContainerTrainingJobRunOp and neither of dataset, train_data or 
+eval_data args is passed allowing the trainer package to pick the data from default
+environment variables - `os.environ["AIP_TRAINING_DATA_URI"]`, `os.environ["AIP_EVALUATION_DATA_URI"]`,
+and `os.environ["AIP_TESTING_DATA_URI"]` - set by Vertex AI.
+
+---
 
 ## Optional arguments
 ### Tree-based model hyperparemeters
@@ -50,25 +52,27 @@ training script to pick the dataset(s) from default environment variables -
 - --eta0: Initial learning rate. Not used if learning rate schedule is 'optimal'
 - --no_intercept: Fit model without an intercept
 
+### Hyperparameter tuning
+Tuning (using cloudml-hypertune package) is enabled by passing the "--hypertune" argument:
+
+`python -m vertex_proptrainer.train --segment=<SEGMENT> --dataset <DATASET> --hypertune`
+
+Tuning does not save artifacts at this time; functionality to be added in subsequent release(s)
+to allow checkpointing, training resumption and tuning artifact saving to GCS.
+
 ### Early stopping
 - --rounds: Number of rounds without evaluation improvement to trigger early stopping
 
-### Hyperparameter tuning
-Tuning (using cloudml-hypertune package) enabled by passing the "--hypertune" argument:
-
-`python -m vertex_proptrainer.train --segment=<SEGMENT> --dataset <DATASET> --hypertune`
-Tuning does not create artifacts at this time; subsequent releases will allow for checkpointing, saving artifacts and resuming training.
-
-### Model artifact(s) save location
-- --model_dir: GCS URI to save generated model and preprocessor files. If not provided,
-training package uses the environment variable `os.environ["AIP_MODEL_DIR"]` set by
-Vertex AI. If not provided, URI must end with "/model".
+### Model artifact saving
+- --model_dir: GCS URI to save model artifacts. If not provided, package will use Vertex AI 
+default environment variable `os.environ["AIP_MODEL_DIR"]`, and, if provided, must end with
+"/model"
 i.e.\
 `... --model_dir gs://<bucket>/<gcs_path>/model`
 
 ---
-
 ## Building from Source
+
 Build package within src folder:
 
 `cd src`\
