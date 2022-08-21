@@ -3,7 +3,8 @@ model.joblib
 *.pkl
 setup.cfg
 pyproject.toml
-requirements.txt
+requirements_py36.txt
+requirements_py37.txt
 
 # Docker
 .dockerignore
