@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
     
-VERSION = '0.2.2'
+VERSION = '0.2.3'
 
 REQUIRED_PACKAGES = [
     'pandas==1.1.5', 'xgboost==1.5.2', 'numpy>=1.21', 'scikit-learn==0.24.2',
