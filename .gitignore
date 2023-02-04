@@ -1,14 +1,6 @@
 # Miscellaneous
 model.joblib
 *.pkl
-setup.cfg
-pyproject.toml
-requirements_py36.txt
-requirements_py37.txt
-tests/model_evaluate_component.py
-
-# Docker
-.dockerignore
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

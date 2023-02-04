@@ -12,13 +12,13 @@ ENV PYTHONUNBUFFERED True
 
 # copy package installer
 WORKDIR /
-COPY ./src/dist/vertex_proptrainer-0.2.3-py3-none-any.whl ./
+COPY ./dist/vertex_proptrainer-0.3.0-py3-none-any.whl ./
 
 # make RUN commands use `bash --login`
 SHELL ["/bin/bash", "--login", "-c"]
 
 # install package
-RUN pip install ./vertex_proptrainer-0.2.3-py3-none-any.whl
+RUN pip install ./vertex_proptrainer-0.0.0-py3-none-any.whl
 
 # establish entrypoint
 ENTRYPOINT ["python", "-m", "vertex_proptrainer.train"]
