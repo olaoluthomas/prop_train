@@ -6,10 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 VERSION = '0.3.0'
 
 REQUIRED_PACKAGES = [
-    'pandas==1.5.3', 'xgboost==1.7.0', 'numpy==1.24.1', 'scikit-learn==1.2.1',
-    'google-cloud-bigquery==3.5.0', 'google-cloud-bigquery-storage==2.18.1',
-    'google-cloud-storage==1.44.0', 'importlib-resources==5.10.2',
-    'cloudml-hypertune==0.1.0.dev6', 'google-cloud-aiplatform==1.21.0',
+    'pandas==2.2.2', 'xgboost==2.1.1', 'numpy==2.0.2', 'scikit-learn==1.5.1',
 ]
 
 setup(
